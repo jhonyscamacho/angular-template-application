@@ -3,12 +3,12 @@
     <mat-icon>account_circle</mat-icon>
     <span class="nav-caption">Signup</span>
   </a>
-  <a mat-list-item routerLink="/login" (click)="sidenav.close()">
+  <a mat-list-item routerLink="/login" (click)="onClose()">
     <mat-icon>input</mat-icon>
     <span class="nav-caption">Login</span>
   </a>
   <mat-list-item>
-    <button mat-icon-button (click)="sidenav.close()">
+    <button mat-icon-button (click)="onClose()">
       <mat-icon>power_settings_new</mat-icon>
       <span class="nav-caption">Logout</span>
     </button>
