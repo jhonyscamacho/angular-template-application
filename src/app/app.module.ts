@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -8,6 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
+import { NavigationModule } from './navigation/navigation.module';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
@@ -19,8 +20,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   declarations: [
     AppComponent,
     WelcomeComponent,
-    HeaderComponent,
-    SidenavListComponent,
     DashboardComponent
   ],
   imports: [
@@ -29,7 +28,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MaterialModule,
     AppRoutingModule,
     FlexLayoutModule,
-    AuthModule
+    AuthModule,
+    NavigationModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
