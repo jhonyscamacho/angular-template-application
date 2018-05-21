@@ -4,23 +4,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { HeaderComponent } from './navigation/header/header.component';
-import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
+import { CoreModule } from './core/core.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 
 import { AuthService } from './auth/auth.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WelcomeComponent,
-    DashboardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     FlexLayoutModule,
     AuthModule,
-    NavigationModule
+    NavigationModule,
+    CoreModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
