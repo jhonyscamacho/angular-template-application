@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+// Angular imports
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgModule } from '@angular/core';
 
+// Application imports
 import { MaterialModule } from './../material.module';
 
 @NgModule({

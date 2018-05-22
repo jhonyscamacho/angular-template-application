@@ -1,6 +1,8 @@
+// Angular imports
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+// Application imports
 import { AuthService } from './../auth.service';
 
 @Component({

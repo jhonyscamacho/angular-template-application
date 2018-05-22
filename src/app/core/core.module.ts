@@ -1,10 +1,11 @@
+// Angular imports
 import { NgModule } from '@angular/core';
 
-import { SharedModule } from '../shared/shared.module';
-
-import { WelcomeComponent } from './welcome/welcome.component';
+// Application imports
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationModule } from './navigation/navigation.module';
+import { SharedModule } from '../shared/shared.module';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   imports: [SharedModule],

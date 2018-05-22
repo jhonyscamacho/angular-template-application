@@ -1,29 +1,31 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+// Angular imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgModule } from '@angular/core';
 
+// Application imports
 import { AppComponent } from './app.component';
-
-import { CoreModule } from './core/core.module';
-import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthService } from './auth/auth.service';
+import { CoreModule } from './core/core.module';
 import { MaterialModule } from './material.module';
 
-import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    AppRoutingModule,
+    BrowserModule,
     FlexLayoutModule,
+
+    AppRoutingModule,
     AuthModule,
-    CoreModule
+    CoreModule,
+    MaterialModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
