@@ -6,7 +6,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
-import { NavigationModule } from './navigation/navigation.module';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
@@ -24,7 +23,6 @@ import { AuthService } from './auth/auth.service';
     AppRoutingModule,
     FlexLayoutModule,
     AuthModule,
-    NavigationModule,
     CoreModule
   ],
   providers: [AuthService],
