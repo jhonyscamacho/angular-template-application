@@ -3,7 +3,7 @@ import { Component, EventEmitter, OnInit, OnDestroy, Output } from '@angular/cor
 import { Subscription } from 'rxjs/Subscription';
 
 // Application imports
-import { AuthService } from './../../../auth/auth.service';
+import { AuthService } from './../../auth/auth.service';
 
 @Component({
   selector: 'app-sidenav-list',
