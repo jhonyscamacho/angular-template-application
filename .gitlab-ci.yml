@@ -29,14 +29,6 @@ build:
   dependencies:
     - test
 
-setup-deploy:
-  image: tsuru/client:latest
-  stage: deploy
-  when: manual
-  script:
-    - tsuru app-create ${CI_PROJECT_NAME}-staging static
-    - tsuru app-create ${CI_PROJECT_NAME}-production static
-
 .job_template: &deploy_definition
   image: tsuru/client:latest
   stage: deploy
@@ -52,7 +44,7 @@ setup-deploy:
 deploy-staging-tsuru:
   <<: *deploy_definition
   only:
-    - developer
+    - develop
   variables:
     DEPLOY_MODE: staging
 
@@ -62,3 +54,11 @@ deploy-production-tsuru:
     - master
   variables:
     DEPLOY_MODE: production
+
+setup-deploy:
+  image: tsuru/client:latest
+  stage: deploy
+  when: manual
+  script:
+    - tsuru app-create ${CI_PROJECT_NAME}-staging static
+    - tsuru app-create ${CI_PROJECT_NAME}-production static
