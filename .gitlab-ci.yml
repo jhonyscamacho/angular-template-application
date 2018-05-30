@@ -14,9 +14,8 @@ cache:
 test:
   stage: test
   script:
-    - printenv
     - npm i
-    - npm run test:ci
+    - npm run test
 
 build:
   stage: build
@@ -57,7 +56,7 @@ deploy-staging-tsuru:
   variables:
     DEPLOY_MODE: staging
 
-deploy-staging-tsuru:
+deploy-production-tsuru:
   <<: *deploy_definition
   only:
     - master
