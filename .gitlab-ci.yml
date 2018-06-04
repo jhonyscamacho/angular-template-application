@@ -3,7 +3,6 @@ stages:
   - build
   - deploy
 
-#image: johnpapa/angular-cli
 image: node:latest
 
 cache:
@@ -35,30 +34,32 @@ build:
   when: manual
   script:
     - cd dist
-    - tsuru app-deploy -a ${CI_PROJECT_NAME}-${DEPLOY_MODE} .
+    - tsuru app-deploy -a ${APP_NAME} .
   dependencies:
     - build
   environment:
-    name: ${DEPLOY_MODE}
+    name: ${APP_NAME}
 
 deploy-staging-tsuru:
   <<: *deploy_definition
   only:
     - develop
   variables:
-    DEPLOY_MODE: staging
+    APP_NAME: ${CI_PROJECT_NAME}-staging
 
 deploy-production-tsuru:
   <<: *deploy_definition
   only:
     - master
   variables:
-    DEPLOY_MODE: production
+    APP_NAME: ${CI_PROJECT_NAME}
 
 setup-deploy:
   image: tsuru/client:latest
   stage: deploy
+  only:
+    - develop
   when: manual
   script:
     - tsuru app-create ${CI_PROJECT_NAME}-staging static
-    - tsuru app-create ${CI_PROJECT_NAME}-production static
+    - tsuru app-create ${CI_PROJECT_NAME} static
