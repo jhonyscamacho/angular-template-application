@@ -1,0 +1,65 @@
+stages:
+  - test
+  - build
+  - deploy
+
+image: node:latest
+
+cache:
+  paths:
+    - dist/
+    - node_modules/
+
+test:
+  stage: test
+  script:
+    - npm i
+    - npm run test
+
+build:
+  stage: build
+  script:
+    - npm install
+    - ./node_modules/@angular/cli/bin/ng build --prod
+  artifacts:
+    paths:
+      - dist
+  when: on_success
+  dependencies:
+    - test
+
+.job_template: &deploy_definition
+  image: tsuru/client:latest
+  stage: deploy
+  when: manual
+  script:
+    - cd dist
+    - tsuru app-deploy -a ${APP_NAME} .
+  dependencies:
+    - build
+  environment:
+    name: ${APP_NAME}
+
+deploy-staging-tsuru:
+  <<: *deploy_definition
+  only:
+    - develop
+  variables:
+    APP_NAME: ${CI_PROJECT_NAME}-staging
+
+deploy-production-tsuru:
+  <<: *deploy_definition
+  only:
+    - master
+  variables:
+    APP_NAME: ${CI_PROJECT_NAME}
+
+setup-deploy:
+  image: tsuru/client:latest
+  stage: deploy
+  only:
+    - develop
+  when: manual
+  script:
+    - tsuru app-create ${CI_PROJECT_NAME}-staging static
+    - tsuru app-create ${CI_PROJECT_NAME} static
