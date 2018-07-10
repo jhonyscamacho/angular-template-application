@@ -1,6 +1,6 @@
 // Angular imports
 import { Component, EventEmitter, OnInit, OnDestroy, Output } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 // Application imports
 import { AuthService } from './../../auth/auth.service';

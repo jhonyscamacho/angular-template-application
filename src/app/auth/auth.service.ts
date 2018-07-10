@@ -1,7 +1,7 @@
 // Angular imports
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 // Application imports
 import { AuthData } from './auth-data.model';
