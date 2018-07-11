@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MyNavComponent } from './my-nav/my-nav.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   imports: [
@@ -26,7 +26,7 @@ import { MyNavComponent } from './my-nav/my-nav.component';
     HeaderComponent,
     SidenavListComponent,
     WelcomeComponent,
-    MyNavComponent,
+    NavComponent,
     DashboardComponent
   ],
   exports: [
@@ -34,7 +34,7 @@ import { MyNavComponent } from './my-nav/my-nav.component';
     HeaderComponent,
     SidenavListComponent,
     WelcomeComponent,
-    MyNavComponent,
+    NavComponent,
     DashboardComponent
   ]
 })
