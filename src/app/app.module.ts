@@ -25,13 +25,11 @@ import {
   MatPaginatorModule,
   MatSortModule
 } from '@angular/material';
-import { MyTableComponent } from './my-table/my-table.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MyTableComponent
+    AppComponent
   ],
   imports: [
     BrowserAnimationsModule,
