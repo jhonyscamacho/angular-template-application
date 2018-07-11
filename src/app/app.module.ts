@@ -11,11 +11,27 @@ import { AuthModule } from './auth/auth.module';
 import { AuthService } from './auth/auth.service';
 import { CoreModule } from './core/core.module';
 import { MaterialModule } from './material.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule
+} from '@angular/material';
+import { MyTableComponent } from './my-table/my-table.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyTableComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -25,7 +41,19 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     AuthModule,
     CoreModule,
-    MaterialModule
+    MaterialModule,
+    LayoutModule,
+    // MatToolbarModule,
+    // MatButtonModule,
+    // MatSidenavModule,
+    // MatIconModule,
+    // MatListModule,
+    // MatGridListModule,
+    // MatCardModule,
+    // MatMenuModule,
+    // MatTableModule,
+    // MatPaginatorModule,
+    // MatSortModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
