@@ -12,7 +12,6 @@ import { CoreRoutingModule } from './core.routing.module';
 // Component imports
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
-import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavComponent } from './nav/nav.component';
 
@@ -36,14 +35,12 @@ import { NavComponent } from './nav/nav.component';
     DashboardComponent,
     HeaderComponent,
     NavComponent,
-    SidenavListComponent,
     WelcomeComponent
   ],
   exports: [
     DashboardComponent,
     HeaderComponent,
     NavComponent,
-    SidenavListComponent,
     WelcomeComponent
   ]
 })
