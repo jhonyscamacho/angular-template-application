@@ -12,7 +12,6 @@ import { CoreRoutingModule } from './core.routing.module';
 // Component imports
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { NavComponent } from './nav/nav.component';
 
 @NgModule({
@@ -34,14 +33,12 @@ import { NavComponent } from './nav/nav.component';
   declarations: [
     DashboardComponent,
     HeaderComponent,
-    NavComponent,
-    WelcomeComponent
+    NavComponent
   ],
   exports: [
     DashboardComponent,
     HeaderComponent,
-    NavComponent,
-    WelcomeComponent
+    NavComponent
   ]
 })
 export class CoreModule { }
