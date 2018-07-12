@@ -1,14 +1,20 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+// Angular imports
+import { APP_BASE_HREF } from '@angular/common';
+import { async, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { FlexLayoutModule, CoreModule } from '@angular/flex-layout';
-import { AppRoutingModule } from './app-routing.module';
-import { AuthModule } from './auth/auth.module';
-import { MaterialModule } from './material.module';
-import { AuthService } from './auth/auth.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { APP_BASE_HREF } from '@angular/common';
+import { FlexLayoutModule, CoreModule } from '@angular/flex-layout';
+
+// Module imports
+import { AuthModule } from './auth/auth.module';
+import { AppRoutingModule } from './app-routing.module';
+
+// Service imports
+import { AuthService } from './auth/auth.service';
+
+// Component imports
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
 
@@ -19,13 +25,12 @@ describe('AppComponent', () => {
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       imports: [
+        AuthModule,
+        AppRoutingModule,
         BrowserAnimationsModule,
         BrowserModule,
-        FlexLayoutModule,
-        AppRoutingModule,
-        AuthModule,
         CoreModule,
-        MaterialModule
+        FlexLayoutModule
       ],
       providers: [
         AuthService,
@@ -50,7 +55,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(compiled.querySelector('app-nav')).toBeTruthy();
   }));
 
 });

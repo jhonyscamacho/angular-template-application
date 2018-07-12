@@ -1,10 +1,17 @@
+// Angular imports
+import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { SidenavListComponent } from './sidenav-list.component';
-import { AuthService } from '../../auth/auth.service';
+// Module imports
 import { AppRoutingModule } from '../../app-routing.module';
-import { APP_BASE_HREF } from '@angular/common';
+
+// Service imports
+import { AuthService } from '../../auth/auth.service';
+
+// Component import
+import { SidenavListComponent } from './sidenav-list.component';
+
 
 describe('SidenavListComponent', () => {
   let component: SidenavListComponent;

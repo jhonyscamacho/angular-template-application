@@ -1,5 +1,7 @@
+// Angular imports
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Component imports
 import { WelcomeComponent } from './welcome.component';
 
 describe('WelcomeComponent', () => {

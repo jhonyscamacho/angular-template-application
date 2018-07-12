@@ -1,24 +1,32 @@
+import { debounceTime } from 'rxjs/operators';
+// Angular imports
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, fakeAsync, TestBed, tick, discardPeriodicTasks, async, flush } from '@angular/core/testing';
+import { MatSidenavModule } from '@angular/material';
 
-import { fakeAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-
+// Component imports
 import { NavComponent } from './nav.component';
+import { Observable } from 'rxjs';
 
-describe('MyNavComponent', () => {
+describe('NavComponent', () => {
   let component: NavComponent;
   let fixture: ComponentFixture<NavComponent>;
 
   beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavComponent ]
+      declarations: [ NavComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      imports: [ MatSidenavModule, BrowserAnimationsModule ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(NavComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   }));
 
   it('should compile', () => {
+     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

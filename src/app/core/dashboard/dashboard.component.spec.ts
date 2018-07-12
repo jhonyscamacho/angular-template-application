@@ -1,15 +1,30 @@
+// Angular imports
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import {
+  MatCardModule,
+  MatIconModule,
+  MatGridListModule,
+  MatMenuModule
+} from '@angular/material';
 
-import { fakeAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-
+// Component imports
 import { DashboardComponent } from './dashboard.component';
 
-describe('MyDashboardComponent', () => {
+describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ DashboardComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      imports: [
+        MatGridListModule,
+        MatIconModule,
+        MatCardModule,
+        MatMenuModule
+      ]
     })
     .compileComponents();
 
