@@ -13,21 +13,17 @@
         <span>Login</span>
       </a>
 
-      <a mat-list-item routerLink="/dashboard" *ngIf="!isAuth">
+      <a mat-list-item routerLink="/dashboard" *ngIf="isAuth">
         <mat-icon>dashboard</mat-icon>
         <span>Dashboard</span>
       </a>
 
-      <mat-list-item>
-        <button mat-icon-button (click)="onLogout()" *ngIf="isAuth">
+      <mat-list-item *ngIf="isAuth">
+        <button mat-icon-button (click)="onLogout()">
           <mat-icon>power_settings_new</mat-icon>
           <span class="nav-caption">Logout</span>
         </button>
       </mat-list-item>
-
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
