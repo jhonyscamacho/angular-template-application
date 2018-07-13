@@ -1,3 +1,6 @@
+import { RouterModule, Router } from '@angular/router';
+import { AuthService } from './../../auth/auth.service';
+
 import { debounceTime } from 'rxjs/operators';
 // Angular imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,7 +20,11 @@ describe('NavComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ NavComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      imports: [ MatSidenavModule, BrowserAnimationsModule ]
+      imports: [ MatSidenavModule, BrowserAnimationsModule ],
+      providers: [
+        { provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+        AuthService
+      ]
     })
       .compileComponents();
 
