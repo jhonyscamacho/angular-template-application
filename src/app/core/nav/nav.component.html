@@ -1,8 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-    <mat-toolbar color="primary" class="mat-elevation-z6">Menu</mat-toolbar>
-    <mat-nav-list class="content-body">
+    <mat-toolbar color="primary" class="mat-elevation-z6"></mat-toolbar>
+    <mat-nav-list class="menu-list">
       <a mat-list-item routerLink="/signup" *ngIf="!isAuth">
         <mat-icon>account_circle</mat-icon>
         <span>Signup</span>
@@ -31,7 +31,8 @@
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Application Title</span>
+      <img class="app-brasao" src="../assets/angularjs.png" width="40px" height="40px" alt="">
+      <div class="app-name">| Application Name</div>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
